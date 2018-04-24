@@ -1,18 +1,19 @@
 package com.ehcache.helloworld.ehcachehelloworld.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
-public class User {
-
+public class User implements Serializable {
+	private static final long serialVersionUID = -6249397911566315813L;
 	private Integer id;
 
 	private String username;
 
 	private String password;
 
-	@JSONField(format="yyyy-MM-dd")
+	@JSONField(format = "yyyy-MM-dd")
 	private Date birthday;
 
 	public Integer getId() {
