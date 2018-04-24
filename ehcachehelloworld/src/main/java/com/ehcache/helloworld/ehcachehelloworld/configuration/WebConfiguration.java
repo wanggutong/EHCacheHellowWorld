@@ -1,4 +1,4 @@
-package com.ehcache.helloworld.ehcachehelloworld.webconfiguration;
+package com.ehcache.helloworld.ehcachehelloworld.configuration;
 
 import org.apache.catalina.filters.RemoteIpFilter;
 import org.springframework.beans.factory.annotation.Autowired;
