@@ -24,7 +24,7 @@ public class UserDaoTest {
 		user.setId(1);
 		user.setUsername("Keith Wang");
 		user.setPassword("P@ssworld");
-		user.setBirthday(new Date());
+		user.setBirthday("2008-01-01");
 
 		int result = this.userDao.insert(user);
 		System.out.println(result);
