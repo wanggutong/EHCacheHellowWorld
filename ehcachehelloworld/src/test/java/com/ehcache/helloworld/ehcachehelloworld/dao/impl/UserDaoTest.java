@@ -22,8 +22,8 @@ public class UserDaoTest {
 	public void testInsert() {
 		User user = new User();
 		user.setId(1);
-		user.setUsername("张三");
-		user.setPassword("zhangsan");
+		user.setUsername("Keith Wang");
+		user.setPassword("P@ssworld");
 		user.setBirthday(new Date());
 
 		int result = this.userDao.insert(user);
@@ -40,7 +40,7 @@ public class UserDaoTest {
 	public void testUpdate() {
 		User user = new User();
 		user.setId(1);
-		user.setPassword("zhangsan123");
+		user.setPassword("P@ssworld!");
 		this.userDao.update(user);
 	}
 
