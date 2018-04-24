@@ -80,8 +80,28 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
+		
+		<!-- EHCache configuration -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
 
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+		</dependency>
+		<!-- EHCache configuration End-->
+
+		<!-- Debug configuration -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>springloaded</artifactId>
+			<version>1.2.5.RELEASE</version>
+		</dependency>
+		<!-- Debug configuration End-->
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -89,6 +109,8 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<fork>true</fork>
+					<!-- Debug configuration-->
+					<jvmArguments>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005</jvmArguments>
 				</configuration>
 			</plugin>
 		</plugins>
