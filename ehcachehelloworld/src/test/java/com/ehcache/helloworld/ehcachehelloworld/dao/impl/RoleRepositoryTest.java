@@ -25,12 +25,12 @@ public class RoleRepositoryTest {
 		Role result = this.roleRepository.save(role);
 		System.out.println(result);
 	}
-
-	@Test
-	public void testFindOne() {
-		Role role = this.roleRepository.getOne(1);
-		System.out.println(role);
-	}
+//
+//	@Test
+//	public void testFindOne() {
+//		Role role = this.roleRepository.getOne(1);
+//		System.out.println(role);
+//	}
 
 	@Test
 	public void testUpdate() {
