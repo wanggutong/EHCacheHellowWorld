@@ -1,29 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
+	xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
 
-    <!-- Disk cache location -->
-    <!-- Modify to E:/ehcache -->
-    <diskStore path="java.io.tmpdir/ehcache"/>
-
-    <!-- Default cache -->
-    <defaultCache
-            maxEntriesLocalHeap="2"
-            eternal="false"
-            timeToIdleSeconds="120"
-            timeToLiveSeconds="120"
-            maxEntriesLocalDisk="10000000"
-            diskExpiryThreadIntervalSeconds="120"
-            memoryStoreEvictionPolicy="LRU">
-        <persistence strategy="localTempSwap"/>
-    </defaultCache>
-
-    <!-- Customized cache -->
-    <cache name="user"
-           maxElementsInMemory="2"
-           eternal="false"
-           timeToIdleSeconds="50"
-           timeToLiveSeconds="50"
-           overflowToDisk="true"
-           memoryStoreEvictionPolicy="LRU"/>
+	<!-- Disk cache location -->
+	<!-- Modify to E:/ehcache -->
+	<diskStore path="java.io.tmpdir/ehcache" />
+	<cacheManagerEventListenerFactory
+		class="" properties="" />
+	<terracottaConfig url="localhost:9510,localhost:9610" />
+	<!-- Default cache -->
+	<defaultCache maxElementsInMemory="10000" eternal="false"
+		timeToIdleSeconds="120" timeToLiveSeconds="120" overflowToDisk="true"
+		diskSpoolBufferSizeMB="30" maxElementsOnDisk="10000000"
+		diskPersistent="false" diskExpiryThreadIntervalSeconds="120"
+		memoryStoreEvictionPolicy="LRU" />
+	<cache name="user" maxElementsInMemory="100"
+		maxElementsOnDisk="1000" eternal="false" timeToIdleSeconds="120"
+		timeToLiveSeconds="0" memoryStoreEvictionPolicy="LFU">
+		<terracotta />
+	</cache>
 </ehcache>

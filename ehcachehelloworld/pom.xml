@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -22,6 +23,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<tc-maven-plugin.version>1.9.7</tc-maven-plugin.version>
+		<ehcache-core.version>2.6.8</ehcache-core.version>
+		<ehcache-terracotta.version>2.6.8</ehcache-terracotta.version>
 	</properties>
 
 	<dependencies>
@@ -87,10 +91,7 @@
 			<artifactId>spring-boot-starter-cache</artifactId>
 		</dependency>
 
-		<dependency>
-            <groupId>net.sf.ehcache</groupId>
-			<artifactId>ehcache</artifactId>
-		</dependency>
+
 		<!-- EHCache configuration End -->
 
 		<!-- Debug configuration -->
@@ -100,6 +101,21 @@
 			<version>1.2.5.RELEASE</version>
 		</dependency>
 		<!-- Debug configuration End -->
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache-core</artifactId>
+			<version>2.6.8</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache-terracotta</artifactId>
+			<version>2.6.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.terracotta</groupId>
+			<artifactId>terracotta-toolkit-1.6-runtime</artifactId>
+			<version>5.7.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -116,4 +132,20 @@
 			</plugin>
 		</plugins>
 	</build>
+	<repositories>
+		<repository>
+			<id>sourceforge</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>terracotta-repository</id>
+			<url>http://www.terracotta.org/download/reflector/releases</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+	</repositories>
 </project>
